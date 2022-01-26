@@ -12,7 +12,7 @@ def x2 (n):
 
 
 def x3_1 ()
-#Денис
+  return collatz(x*3+1)
 
 
 def collatz (x)
