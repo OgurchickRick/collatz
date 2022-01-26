@@ -11,8 +11,8 @@ def x2 (n):
   return collatz(n//2)
 
 
-def x3_1 ()
-#Денис
+def x3_1 (n)
+  return collatz(n*3+1)
 
 
 def collatz (x)
