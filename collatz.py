@@ -1,30 +1,31 @@
-x = int(input('Введите положительное число:'))
-A = []
-
-if x > 0:
-    def x2(x):
-        x = x / 2
-        return collatz(x)
-
-
-    def x3_1(x):
-        x = x * 3 + 1
-        return collatz(x)
+def x_input ():
+    while True:
+        n = int(input('Введите натуральное число:'))
+        if n > 0:
+            break
+        print('Неверные данные')
+    return n
 
 
-    def collatz(x):
-        if x == 1:
-            A.append(int(x))
-            return  x
-        elif x % 2 == 0:
-            A.append(int(x))
-            return x2(x)
-        else:
-            A.append(int(x))
-            return x3_1(x)
+def x2 (n):
+    return collatz(n//2)
 
 
-    collatz(x)
-    print(A)
-else:
-    print("Введены некорректные данные")
+def x3_1 (n):
+    return collatz(n*3+1)
+
+
+def collatz (n):
+    result = [n]
+    if n == 1:
+        pass
+    elif n % 2 == 0:
+        result.extend(x2())
+    else:
+        result.extend(x3_1())
+    return result
+
+
+if __name__ == "__main__":
+    x = x_input ()
+    print (collatz(x))
